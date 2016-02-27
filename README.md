@@ -18,7 +18,7 @@ by a single script: run_analysis.R.
 The script run_analysis.R produces a tidy data set as described in the file CodeBook.md 
 and writes the data set to a file **NAME HERE
 
-# How to reproduce the analysis
+## How to reproduce the analysis
 To reproduce the analysis: 
 1. Download and unzip the raw data as described above
 2. Make sure that the unzipped data is located in a directory called "UCI HAR Dataset", which is a subdirectory of the R working directory.
