@@ -20,8 +20,8 @@ and writes the data set to a file **NAME HERE
 
 ## How to reproduce the analysis
 To reproduce the analysis: 
-1. Download and unzip the raw data as described above
-2. Make sure that the unzipped data is located in a directory called "UCI HAR Dataset", which is a subdirectory of the R working directory.
-3. In most operating systems, the capitalisation of the subdirectory name must be exactly as written.
-4. Make sure the script "run\_analysis.R" is in the R working directory
-5. Run the script "run_analysis.R"
+ 1. Download and unzip the raw data as described above
+ 2. Make sure that the unzipped data is located in a directory called "UCI HAR Dataset", which is a subdirectory of the R working directory.
+ 3. In most operating systems, the capitalisation of the subdirectory name must be exactly as written.
+ 4. Make sure the script "run\_analysis.R" is in the R working directory
+ 5. Run the script "run_analysis.R"
