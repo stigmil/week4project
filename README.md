@@ -30,8 +30,7 @@ To reproduce the analysis:
 ## To read the output file back into R
  The analysis script writes the output file "week4ProjectOutput.txt" using the R
  function write.table(). The following code will read the output file back into R 
- as a data frame:
-     data <- df_tbl(read.table("week4ProjectOutput.txt", header = TRUE))
+ as a data frame: `data <- df_tbl(read.table("week4ProjectOutput.txt", header = TRUE))`
 This description is based on a recommendation made in [this blog.]
 (https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/) 
   
