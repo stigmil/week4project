@@ -26,10 +26,10 @@ To reproduce the analysis:
  3. In most operating systems, the capitalisation of the subdirectory name must be exactly as written.
  4. Make sure the script "run\_analysis.R" is in the R working directory
  5. Run the script "run_analysis.R"
+ 6. The analysis script writes the output file "week4ProjectOutput.txt". 
  
 ## To read the output file back into R
- The analysis script writes the output file "week4ProjectOutput.txt" using the R
- function write.table(). The following code will read the output file back into R 
+ The following code will read the output file back into R 
  as a data frame: `data <- df_tbl(read.table("week4ProjectOutput.txt", header = TRUE))`
 This description is based on a recommendation made in [this blog.]
 (https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/) 
