@@ -1,12 +1,10 @@
 # Getting and Cleaning Data - Week 4 Project
-
 This codebook describes the data in the file "week4ProjectOutput.txt"
-The file is produced by the R script "run_analyis.R" as described in the document
-README.md in the same repository as this CodeBook.
 
 The data in the file is intended to be "tidy" in line with the principles set out by
 Hadley Wickham in the paper "Tidy Data" [published in the Journal of Statistical Software](https://www.jstatsoft.org/article/view/v059i10).
 
+## Source and measurements
 The dataset was downloaded from URL:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -23,6 +21,62 @@ The README file published with the source data explains how the measurements wer
 > These signals were used to estimate variables of the feature vector for each pattern:  
 > '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
+## Why the dataset is tidy 
+The data comprises a table of 180 observations of 68 variables. Each observation comprises
+a variable showing a code for a single experimental subject and a variable describing a 
+single single experimental activity, during which measurements were made for the remaining
+66 variables. In this dataset, each of the 66 measurements in each observation is 
+is the mean of the 10299 individual observations of the corresponding variable 
+in the source data for observed subject and activity. 
+
+This layout of data fulfils the criterion for tidy data that each observation
+forms a row of the dataset - even though in this case the observation is a mean of
+a number of individual measurements. It also fulfils the criterion for tidy data that 
+each variable forms a column of the dataset: the columns show the subject, the experimental 
+activity and 66 individual measured variables. 
+
+The 66 measured variables each represent one type of motion data recorded from the 
+accelerometer and gyroscope of a smartphone worn by the experimental subject while carrying
+out an experimental activity. This fulfils the criterion for tidy data that each type of
+observational unit forms a table.
+
+## Data Processing
+The published data is divided into separate sets of test (2947 observations) and training 
+(7352 observations) data. The raw data in each set included observations of 561 variables. 
+For this analysis, only the measurements on the mean and standard deviation were extracted 
+from the raw data for each dataset. This reduced the number of variables to 66. The mean 
+and standard deviation measurements were identified from the variable names (described as 
+"features" in the published data). 
+
+For this analysis, the test and training sets were combined into a single dataset, 
+initially of 66 variables and 10299 observations.
+
+The dplyr summarise() function was used to calculate the mean of each of the 66 
+measurements for each experimental subject and activityType.
+
+## Description of the variables
+### subject
+An integer in the range 1:30 that represents an individual anonymous experimental subject. 
+For the test and training datasets, the observations for all subjects were stored in one
+file and the subject code in a separate file in the same sequence as the measurements. 
+In the analysis, the subject code for each observation was matched to the corresponding 
+observation. 
+
+### activityType
+A factor with six levels, describing the six different activities carried out by 
+experimental subjects during measurements. The six activities are:
+walking
+walking\_upstairs
+walking\_downstairs
+sitting
+standing
+laying
+
+### 66 remaining variables
+The names of the variables are shown below. The suffix -XYZ indicates that there are 
+three individual measurements of the same parameter, being the X, Y and Z axis
+measurements. Each of these variables is the mean of the corresponding measurements for 
+the subject and activity.
 
 tBodyAcc-XYZ
 tGravityAcc-XYZ
@@ -42,33 +96,3 @@ fBodyAccJerkMag
 fBodyGyroMag
 fBodyGyroJerkMag
 
-The set of variables that were estimated from these signals are: 
-
-mean(): Mean value
-std(): Standard deviation
-
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
-
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
-
-The complete list of variables of each feature vector is available in 'features.txt'
