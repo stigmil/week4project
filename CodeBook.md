@@ -70,12 +70,12 @@ observation.
 ### activityType
 A factor with six levels, describing the six different activities carried out by 
 experimental subjects during measurements. The six activities are:
-- walking
-- walking\_upstairs
-- walking\_downstairs
-- sitting
-- standing
-- laying
+ - walking
+ - walking\_upstairs
+ - walking\_downstairs
+ - sitting
+ - standing
+ - laying
 
 ### 66 remaining variables
 The names of the variables are shown below. The suffix -XYZ indicates that there are 
@@ -83,21 +83,21 @@ three individual measurements of the same parameter, being the X, Y and Z axis
 measurements. Each of these variables is the mean of the corresponding measurements for 
 the subject and activity.
 
-- tBodyAcc-XYZ
-- tGravityAcc-XYZ
-- tBodyAccJerk-XYZ
-- tBodyGyro-XYZ
-- tBodyGyroJerk-XYZ
-- tBodyAccMag
-- tGravityAccMag
-- tBodyAccJerkMag
-- tBodyGyroMag
-- tBodyGyroJerkMag
-- fBodyAcc-XYZ
-- fBodyAccJerk-XYZ
-- fBodyGyro-XYZ
-- fBodyAccMag
-- fBodyAccJerkMag
-- fBodyGyroMag
-- fBodyGyroJerkMag
+ - tBodyAcc-XYZ
+ - tGravityAcc-XYZ
+ - tBodyAccJerk-XYZ
+ - tBodyGyro-XYZ
+ - tBodyGyroJerk-XYZ
+ - tBodyAccMag
+ - tGravityAccMag
+ - tBodyAccJerkMag
+ - tBodyGyroMag
+ - tBodyGyroJerkMag
+ - fBodyAcc-XYZ
+ - fBodyAccJerk-XYZ
+ - fBodyGyro-XYZ
+ - fBodyAccMag
+ - fBodyAccJerkMag
+ - fBodyGyroMag
+ - fBodyGyroJerkMag
 
