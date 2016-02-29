@@ -24,10 +24,10 @@ The README file published with the source data explains how the measurements wer
 ## Why the dataset is tidy 
 The data comprises a table of 180 observations of 68 variables. Each observation comprises
 a variable showing a code for a single experimental subject and a variable describing a 
-single single experimental activity, during which measurements were made for the remaining
+single experimental activity, during which measurements were made for the remaining
 66 variables. In this dataset, each of the 66 measurements in each observation is 
-is the mean of the 10299 individual observations of the corresponding variable 
-in the source data for observed subject and activity. 
+is the mean of the individual observations of the corresponding variable in the source 
+data for observed subject and activity. 
 
 This layout of data fulfils the criterion for tidy data that each observation
 forms a row of the dataset - even though in this case the observation is a mean of
@@ -41,12 +41,17 @@ out an experimental activity. This fulfils the criterion for tidy data that each
 observational unit forms a table.
 
 ## Data Processing
-The published data is divided into separate sets of test (2947 observations) and training 
+The raw published data is divided into separate sets of test (2947 observations) and training 
 (7352 observations) data. The raw data in each set included observations of 561 variables. 
 For this analysis, only the measurements on the mean and standard deviation were extracted 
 from the raw data for each dataset. This reduced the number of variables to 66. The mean 
 and standard deviation measurements were identified from the variable names (described as 
-"features" in the published data). 
+"features" in the published data). Mean measurements were identified by the presence of 
+the string "mean()" in the variable name. Standard deviation measurements were identified
+by the presence of the string "std" in the variable name. A number of variables recorded
+the mean frequency of some measured parameters, indicated by the string "meanFreq" in the 
+variable name. These variables were excluded from the set for analysis as the mean
+measured values of those variables were included. 
 
 For this analysis, the test and training sets were combined into a single dataset, 
 initially of 66 variables and 10299 observations.
@@ -65,12 +70,12 @@ observation.
 ### activityType
 A factor with six levels, describing the six different activities carried out by 
 experimental subjects during measurements. The six activities are:
-walking
-walking\_upstairs
-walking\_downstairs
-sitting
-standing
-laying
+ walking
+ walking\_upstairs
+ walking\_downstairs
+ sitting
+ standing
+ laying
 
 ### 66 remaining variables
 The names of the variables are shown below. The suffix -XYZ indicates that there are 
@@ -78,21 +83,21 @@ three individual measurements of the same parameter, being the X, Y and Z axis
 measurements. Each of these variables is the mean of the corresponding measurements for 
 the subject and activity.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+ tBodyAcc-XYZ
+ tGravityAcc-XYZ
+ tBodyAccJerk-XYZ
+ tBodyGyro-XYZ
+ tBodyGyroJerk-XYZ
+ tBodyAccMag
+ tGravityAccMag
+ tBodyAccJerkMag
+ tBodyGyroMag
+ tBodyGyroJerkMag
+ fBodyAcc-XYZ
+ fBodyAccJerk-XYZ
+ fBodyGyro-XYZ
+ fBodyAccMag
+ fBodyAccJerkMag
+ fBodyGyroMag
+ fBodyGyroJerkMag
 
